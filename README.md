@@ -10,20 +10,6 @@ NutriLog is a calorie tracker that helps you track your daily calorie intake and
 
 ---
 
-## 💻 Screenshots
-
-<!-- Replace the paths with actual screenshots -->
-
-![Dashboard](./screenshots/dashboard.png)
-![Dashboard dark](./screenshots/dashboard-dark.png)
-![Search Result Light](./screenshots/search-result-light.png)
-![Search Result Dark](./screenshots/search-result-dark.png)
-![Login page](./screenshots/login.png)
-![Register Page](./screenshots/signup.png)
-![Search Autocomplete](./screenshots/search-autocomplete.png)
-
----
-
 ## ⚙️ Setup Instructions
 
 1. **Clone the repo**
@@ -81,6 +67,18 @@ yarn start
 | Hosting          | Vercel            | Easy deployment and previews; limited control over server-side features.                               |
 
 ---
+
+## 💻 Screenshots
+
+<!-- Replace the paths with actual screenshots -->
+
+![Dashboard](./screenshots/dashboard.png)
+![Dashboard dark](./screenshots/dashboard-dark.png)
+![Search Result Light](./screenshots/search-result-light.png)
+![Search Result Dark](./screenshots/search-result-dark.png)
+![Login page](./screenshots/login.png)
+![Register Page](./screenshots/signup.png)
+![Search Autocomplete](./screenshots/search-autocomplete.png)
 
 ---
 
