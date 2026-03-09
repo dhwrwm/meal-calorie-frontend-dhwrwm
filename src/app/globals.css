@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ------------------------------- 
+   Design tokens
+   Meal & nutrition theme:
+   - Primary: fresh green (success/confirm actions)
+   - Secondary: warm orange (meals, highlights)
+-------------------------------- */
+@layer base {
+  :root {
+    /* Light theme: clean white */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 18%;
+
+    /* Fresh green primary (healthy / success) */
+    --primary: 142 70% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm orange secondary (meals / highlights) */
+    --secondary: 27 96% 61%;
+    --secondary-foreground: 24 20% 15%;
+
+    --muted: 220 12% 95%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 45 90% 97%;
+    --accent-foreground: 24 20% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 12% 90%;
+    --input: 220 12% 90%;
+    --ring: 142 70% 38%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark theme: neutral charcoal to match white light theme */
+    --background: 220 15% 8%;
+    --foreground: 210 20% 96%;
+
+    --card: 220 15% 11%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 220 15% 11%;
+    --popover-foreground: 210 20% 96%;
+
+    /* Brand colors tuned for dark contrast */
+    --primary: 142 70% 48%;
+    --primary-foreground: 220 15% 6%;
+
+    --secondary: 27 96% 68%;
+    --secondary-foreground: 220 15% 6%;
+
+    --muted: 220 10% 22%;
+    --muted-foreground: 210 12% 70%;
+
+    --accent: 45 45% 24%;
+    --accent-foreground: 210 20% 96%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 210 20% 96%;
+
+    --border: 220 12% 24%;
+    --input: 220 12% 24%;
+    --ring: 142 70% 48%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply bg-background text-foreground;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius: var(--radius);
+
+  --font-sans: var(--font-sans);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-5: var(--chart-5);
+
+  --color-chart-4: var(--chart-4);
+
+  --color-chart-3: var(--chart-3);
+
+  --color-chart-2: var(--chart-2);
+
+  --color-chart-1: var(--chart-1);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+
+  --radius-md: calc(var(--radius) * 0.8);
+
+  --radius-lg: var(--radius);
+
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  --radius-3xl: calc(var(--radius) * 2.2);
+
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes line-expand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes float-orb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18px, -22px) scale(1.06);
+  }
+}
