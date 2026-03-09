@@ -79,6 +79,8 @@ yarn start
 ![Login page](./screenshots/login.png)
 ![Register Page](./screenshots/signup.png)
 ![Search Autocomplete](./screenshots/search-autocomplete.png)
+![Mobile Search Results](./screenshots/mobile-search-result.png)
+![Dashboard mobile](./screenshots/dashboard-mobile.png)
 
 ---
 
