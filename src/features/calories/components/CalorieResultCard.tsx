@@ -10,7 +10,7 @@ import IngredientCard from "./IngredientCard";
 import { Meal } from "@/types/meal";
 
 const CalorieResultCard = ({ meal }: { meal: Meal }) => {
-  const [tab, setTab] = useState("per");
+  const [tab, setTab] = useState<"per" | "total">("per");
 
   const {
     dish_name,
@@ -27,6 +27,8 @@ const CalorieResultCard = ({ meal }: { meal: Meal }) => {
     () => (tab === "per" ? mps : mtot) ?? [],
     [tab, mps, mtot],
   );
+
+  console.log({ tab, activeRows, mps, mtot });
 
   return (
     <Card className="rounded-2xl shadow-2xl">
@@ -79,7 +81,7 @@ const CalorieResultCard = ({ meal }: { meal: Meal }) => {
             {["per", "total"].map((t) => (
               <button
                 key={t}
-                onClick={() => setTab(t)}
+                onClick={() => setTab(t as "per" | "total")}
                 className={`px-3 py-1 rounded-md text-[11px] font-bold transition-all ${
                   tab === t
                     ? "bg-card text-foreground shadow-sm"
