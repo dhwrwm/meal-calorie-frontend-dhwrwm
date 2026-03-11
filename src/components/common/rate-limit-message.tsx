@@ -17,7 +17,11 @@ const RateLimitMessage = ({ seconds }: RateLimitMessageProps) => {
     .padStart(2, "0")}`;
 
   return isActive ? (
-    <FormHelperText error className="text-center text-sm">
+    <FormHelperText
+      error
+      className="text-center text-sm"
+      data-testid="rate-limit"
+    >
       Too many requests from this IP. Try again in {formattedTime}
     </FormHelperText>
   ) : null;

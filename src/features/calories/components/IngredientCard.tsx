@@ -2,9 +2,10 @@ import { Ingredient } from "@/types/meal";
 
 type Props = {
   ing: Ingredient;
+  testId?: string;
 };
 
-function IngredientCard({ ing }: Props) {
+function IngredientCard({ ing, testId }: Props) {
   const im = ing.macronutrients_per_100g || {};
   const macros = [
     ["Protein", im.protein],
@@ -13,7 +14,7 @@ function IngredientCard({ ing }: Props) {
     ["Sat.Fat", im.saturated_fat],
   ];
   return (
-    <div className="bg-muted rounded-xl p-3.5 mb-2">
+    <div data-testid={testId} className="bg-muted rounded-xl p-3.5 mb-2">
       {/* top row */}
       <div className="flex justify-between items-start gap-3 mb-3">
         <div>

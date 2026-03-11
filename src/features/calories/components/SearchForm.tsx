@@ -82,6 +82,7 @@ export default function SearchForm() {
     <>
       <div className="w-full flex flex-col md:flex-row items-center gap-2 my-4">
         <Autocomplete
+          data-testid="dish-input"
           wrapperclassName="w-full md:w-[calc(100%-180px)]"
           options={dropdownOptions.filter((item) =>
             item.label.toLowerCase().includes(dishNameValue.toLowerCase()),
@@ -98,6 +99,7 @@ export default function SearchForm() {
         />
         <div className="flex items-center gap-2 w-full md:w-25">
           <Input
+            data-testid="serving-input"
             type="number"
             placeholder="Servings"
             className="w-20"
@@ -107,6 +109,7 @@ export default function SearchForm() {
             onChange={onChangeServingCount}
           />
           <Button
+            data-testid="search-button"
             variant="primary"
             className="w-30"
             isLoading={isLoading}

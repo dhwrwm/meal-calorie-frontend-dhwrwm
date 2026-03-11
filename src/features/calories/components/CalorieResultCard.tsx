@@ -28,10 +28,8 @@ const CalorieResultCard = ({ meal }: { meal: Meal }) => {
     [tab, mps, mtot],
   );
 
-  console.log({ tab, activeRows, mps, mtot });
-
   return (
-    <Card className="rounded-2xl shadow-2xl">
+    <Card className="rounded-2xl shadow-2xl" data-testid="calorie-result-card">
       <div className="p-4">
         <h2
           className={`text-3xl uppercase font-bold mb-2 ${playfairDisplay.className}`}
@@ -47,27 +45,47 @@ const CalorieResultCard = ({ meal }: { meal: Meal }) => {
       <div className="flex border-b border-border">
         <CalItem
           value={Math.round(calories_per_serving)}
+          testId="cal-item-cal-/-serving"
           label="Cal / Serving"
           color="orange"
         />
         <CalItem
+          testId="cal-item-total-calories"
           value={Math.round(total_calories)}
           label="Total Calories"
           color="green"
         />
-        <CalItem value={servings} label="Servings" color="dark" />
+        <CalItem
+          testId="cal-item-servings"
+          value={servings}
+          label="Servings"
+          color="dark"
+        />
       </div>
 
       {/* ── Primary macros ── */}
       <div className="grid grid-cols-3 border-b border-border">
-        <MacroCell value={mps.protein} unit="g" label="Protein" color="green" />
         <MacroCell
+          testId="macro-protein"
+          value={mps.protein}
+          unit="g"
+          label="Protein"
+          color="green"
+        />
+        <MacroCell
+          testId="macro-carbs"
           value={mps.carbohydrates}
           unit="g"
           label="Carbs"
           color="orange"
         />
-        <MacroCell value={mps.total_fat} unit="g" label="Fat" color="gray" />
+        <MacroCell
+          testId="macro-fat"
+          value={mps.total_fat}
+          unit="g"
+          label="Fat"
+          color="gray"
+        />
       </div>
 
       {/* ── Full nutrient table ── */}
@@ -117,7 +135,7 @@ const CalorieResultCard = ({ meal }: { meal: Meal }) => {
             Ingredient Breakdown
           </p>
           {ingredient_breakdown.map((ing, i) => (
-            <IngredientCard key={i} ing={ing} />
+            <IngredientCard key={i} ing={ing} testId="ingredient-card" />
           ))}
         </div>
       )}

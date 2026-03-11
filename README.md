@@ -56,6 +56,46 @@ yarn start
 
 ---
 
+## 🧪 Testing
+
+This project uses **Vitest** + **React Testing Library** for unit and component testing.
+
+### Run tests
+
+```bash
+npm run test
+# or
+yarn test
+```
+
+### Test setup
+
+| Tool                        | Purpose                                      |
+| --------------------------- | -------------------------------------------- |
+| Vitest                      | Test runner                                  |
+| React Testing Library       | Component rendering and DOM assertions       |
+| `@testing-library/jest-dom` | Custom matchers (e.g. `toBeInTheDocument`)   |
+| `happy-dom`                 | Lightweight DOM environment (replaces jsdom) |
+
+Configuration lives in `vitest.config.ts`. Global setup (font mocks, jest-dom) is in `vitest.setup.ts`.
+
+### What's tested
+
+| Area       | Examples                                           |
+| ---------- | -------------------------------------------------- |
+| Components | `SearchForm`, `Greeting`, `CalorieResultCard` etc. |
+| Hooks      | `useLogin`, `useGetCalories`, `useGreeting` etc.   |
+| Stores     | `useAuthStore`, `useMealStore`                     |
+| Utilities  | `formatLabel`, `apiFetch`                          |
+
+### Notes
+
+- Next.js modules (`next/navigation`, `next/font/google`) are mocked globally via `vitest.setup.ts`
+- Zustand stores are tested directly using `getState()` and `setState()` — no mocking needed
+- `apiFetch` tests replace `global.fetch` with a `vi.fn()` to prevent real HTTP calls
+
+---
+
 ## 🛠️ Tech Decisions & Trade-offs
 
 | Feature          | Tech Choice       | Trade-off / Reasoning                                                                                  |
@@ -65,12 +105,11 @@ yarn start
 | Styling          | Tailwind CSS v4   | Fast styling and responsiveness; but may be verbose in JSX.                                            |
 | API Handling     | Custom `apiFetch` | Centralized fetch with auth support; adds extra abstraction over fetch.                                |
 | Hosting          | Vercel            | Easy deployment and previews; limited control over server-side features.                               |
+| Testing          | Vitest + RTL      | Fast, ESM-native test runner that pairs well with Vite-based Next.js setups.                           |
 
 ---
 
 ## 💻 Screenshots
-
-<!-- Replace the paths with actual screenshots -->
 
 ![Dashboard](./screenshots/dashboard.png)
 ![Dashboard dark](./screenshots/dashboard-dark.png)

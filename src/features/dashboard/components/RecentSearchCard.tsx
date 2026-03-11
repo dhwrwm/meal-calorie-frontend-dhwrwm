@@ -13,7 +13,7 @@ function RecentSearchCard({ item }: Props) {
   return (
     <Card className="my-6">
       <Link
-        href={`/calories?dish_name=${item.dish_name}&servings=${item.servings}`}
+        href={`/calories?dish_name=${encodeURIComponent(item.dish_name)}&servings=${item.servings}`}
         className="w-full flex items-center gap-3.5 p-4"
       >
         {/* Info */}
